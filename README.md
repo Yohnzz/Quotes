@@ -39,7 +39,7 @@ Edit
 ## 📦 Cara Menjalankan
 1. Clone repository ini:
    ```bash
-   git clone https://github.com/username/daily-quotes.git
+   git clone https://github.com/Yohnzz/Quotes.git
 Masuk ke folder project:
 
 bash
@@ -53,6 +53,7 @@ Kamu bisa melihat versi live di:
 GitHub Pages Link
 
 📸 Preview
+./assets/gambar.jpg
 
 📄 Lisensi
 Proyek ini menggunakan lisensi MIT.
