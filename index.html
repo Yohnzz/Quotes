@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspireMe | Motivational Quotes Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --purple: #7C3AED;
+            --deep-purple: #5B21B6;
+            --blue: #3B82F6;
+            --gold: #F59E0B;
+            --light-gold: #FDE68A;
+            --white: #FFFFFF;
+            --light-gray: #F3F4F6;
+            --dark-gray: #1F2937;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--light-gray), #E0E7FF);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(90deg, var(--deep-purple), var(--purple));
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--purple), var(--blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--dark-gray);
+        }
+
+        /* Random Quote Section */
+        .random-quote {
+            background: linear-gradient(135deg, var(--white), #F0F9FF);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .random-quote::before {
+            content: """"";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 8rem;
+            font-family: Georgia, serif;
+            color: var(--light-gold);
+            opacity: 0.5;
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-author {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--purple);
+            text-align: right;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .quote-author::before {
+            content: "— ";
+        }
+
+        .quote-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, var(--purple), var(--blue));
+            color: var(--white);
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn-next i {
+            transition: transform 0.5s ease;
+        }
+
+        .btn-next:hover i {
+            transform: rotate(360deg);
+        }
+
+        .share-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .share-icons a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--purple);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .share-icons a:hover {
+            background: var(--purple);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Quote Grid */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0;
+            color: var(--deep-purple);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--purple), var(--gold));
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 2px solid var(--purple);
+            color: var(--purple);
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--purple);
+            color: var(--white);
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .quote-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .quote-card::before {
+            content: """"";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 5rem;
+            font-family: Georgia, serif;
+            color: var(--light-gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .card-author {
+            font-weight: 600;
+            color: var(--blue);
+            margin-top: auto;
+            font-style: italic;
+        }
+
+        .card-author::before {
+            content: "— ";
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .card-theme {
+            background: var(--light-gold);
+            color: var(--deep-purple);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .card-share {
+            color: var(--purple);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .card-share:hover {
+            color: var(--gold);
+            transform: scale(1.2);
+        }
+
+        /* Theme-specific styles */
+        .motivation { border-top: 4px solid var(--purple); }
+        .life { border-top: 4px solid var(--blue); }
+        .love { border-top: 4px solid #EC4899; }
+        .friendship { border-top: 4px solid var(--gold); }
+        .creativity { border-top: 4px solid #10B981; }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, var(--deep-purple), var(--purple));
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .footer-info p {
+            max-width: 400px;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-links h3::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            opacity: 0.9;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--light-gold);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .random-quote {
+                padding: 30px 20px;
+            }
+            
+            .quote-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .quote-actions {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .quote-text {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 10px;
+            }
+            
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .hero {
+                padding: 30px 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .random-quote {
+                margin-bottom: 30px;
+            }
+            
+            .quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!-- <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-sparkles"></i></div>
+                <div class="logo-text">InspireMe</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Motivation</a></li>
+                    <li><a href="#">Life</a></li>
+                    <li><a href="#">Love</a></li>
+                    <li><a href="#">Friendship</a></li>
+                    <li><a href="#">Creativity</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Find Your Daily Inspiration</h1>
+            <p>Discover powerful quotes from great minds to motivate, inspire, and transform your day.</p>
+        </div>
+    </section>
+
+    <!-- Random Quote Generator -->
+    <section class="random-quote-section">
+        <div class="container">
+            <div class="random-quote fade-in">
+                <div class="quote-text" id="random-quote-text"></div>
+                <div class="quote-author" id="random-quote-author"></div>
+                <div class="quote-actions">
+                    <div class="share-icons">
+                        <a href="#" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <button class="btn btn-next" id="next-quote-btn">
+                        Next Quote <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Collection -->
+    <section class="quote-collection">
+        <div class="container">
+            <h2 class="section-title">Quote Collections</h2>
+            <div class="filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Motivation</button>
+                <button class="filter-btn">Life</button>
+                <button class="filter-btn">Love</button>
+                <button class="filter-btn">Friendship</button>
+                <button class="filter-btn">Creativity</button>
+            </div>
+            <div class="quotes-grid">
+                <!-- Quote Cards -->
+                <div class="quote-card motivation fade-in">
+                    <div class="card-content">
+                        <div class="card-text">The future belongs to those who believe in the beauty of their dreams.</div>
+                        <div class="card-author">Eleanor Roosevelt</div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-theme">Motivation</span>
+                        <div class="card-share"><i class="fas fa-share-alt"></i></div>
+                    </div>
+                </div>
+                
+                <div class="quote-card life fade-in">
+                    <div class="card-content">
+                        <div class="card-text">Life is what happens when you're busy making other plans.</div>
+                        <div class="card-author">John Lennon</div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-theme">Life</span>
+                        <div class="card-share"><i class="fas fa-share-alt"></i></div>
+                    </div>
+                </div>
+                
+                <div class="quote-card love fade-in">
+                    <div class="card-content">
+                        <div class="card-text">The best thing to hold onto in life is each other.</div>
+                        <div class="card-author">Audrey Hepburn</div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-theme">Love</span>
+                        <div class="card-share"><i class="fas fa-share-alt"></i></div>
+                    </div>
+                </div>
+                
+                <div class="quote-card friendship fade-in">
+                    <div class="card-content">
+                        <div class="card-text">A real friend is one who walks in when the rest of the world walks out.</div>
+                        <div class="card-author">Walter Winchell</div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-theme">Friendship</span>
+                        <div class="card-share"><i class="fas fa-share-alt"></i></div>
+                    </div>
+                </div>
+                
+                <div class="quote-card creativity fade-in">
+                    <div class="card-content">
+                        <div class="card-text">Creativity is intelligence having fun.</div>
+                        <div class="card-author">Albert Einstein</div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-theme">Creativity</span>
+                        <div class="card-share"><i class="fas fa-share-alt"></i></div>
+                    </div>
+                </div>
+                
+                <div class="quote-card motivation fade-in">
+                    <div class="card-content">
+                        <div class="card-text">Kalian main boleh, Bodoh Jangan</div>
+                        <div class="card-author">Mr. Danang</div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-theme">Motivation</span>
+                        <div class="card-share"><i class="fas fa-share-alt"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">InspireMe</div>
+                    <p>Your daily source of motivation and inspiration. Discover powerful quotes to uplift your spirit and transform your day.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Submit a Quote</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Motivation</a></li>
+                        <li><a href="#">Life</a></li>
+                        <li><a href="#">Love</a></li>
+                        <li><a href="#">Friendship</a></li>
+                        <li><a href="#">Creativity</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 InspireMe. All rights reserved. Designed with <i class="fas fa-heart" style="color:#F59E0B;"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Quote database
+        const quotes = [
+            {
+                text: "Kalian Main Boleh, Bodoh Jangan",
+                author: "Mr. Danang",
+                theme: "motivation"
+            },
+            {
+                text: "Life is what happens when you're busy making other plans.",
+                author: "John Lennon",
+                theme: "life"
+            },
+            {
+                text: "The best thing to hold onto in life is each other.",
+                author: "Audrey Hepburn",
+                theme: "love"
+            },
+            {
+                text: "A real friend is one who walks in when the rest of the world walks out.",
+                author: "Walter Winchell",
+                theme: "friendship"
+            },
+            {
+                text: "Creativity is intelligence having fun.",
+                author: "Albert Einstein",
+                theme: "creativity"
+            },
+            {
+                text: "Believe you can and you're halfway there.",
+                author: "Theodore Roosevelt",
+                theme: "motivation"
+            },
+            {
+                text: "In three words I can sum up everything I've learned about life: it goes on.",
+                author: "Robert Frost",
+                theme: "life"
+            },
+            {
+                text: "Love is composed of a single soul inhabiting two bodies.",
+                author: "Aristotle",
+                theme: "love"
+            },
+            {
+                text: "Friendship is born at that moment when one person says to another, 'What! You too? I thought I was the only one.'",
+                author: "C.S. Lewis",
+                theme: "friendship"
+            },
+            {
+                text: "Every artist was first an amateur.",
+                author: "Ralph Waldo Emerson",
+                theme: "creativity"
+            },
+            {
+                text: "The only limit to our realization of tomorrow will be our doubts of today.",
+                author: "Franklin D. Roosevelt",
+                theme: "motivation"
+            },
+            {
+                text: "Life is really simple, but we insist on making it complicated.",
+                author: "Confucius",
+                theme: "life"
+            }
+        ];
+
+        // DOM Elements
+        const randomQuoteText = document.getElementById('random-quote-text');
+        const randomQuoteAuthor = document.getElementById('random-quote-author');
+        const nextQuoteBtn = document.getElementById('next-quote-btn');
+        
+        // Function to get a random quote
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+        
+        // Function to display a random quote
+        function displayRandomQuote() {
+            const quote = getRandomQuote();
+            randomQuoteText.textContent = quote.text;
+            randomQuoteAuthor.textContent = quote.author;
+            
+            // Add animation class
+            randomQuoteText.parentElement.classList.add('fade-in');
+            setTimeout(() => {
+                randomQuoteText.parentElement.classList.remove('fade-in');
+            }, 600);
+        }
+        
+        // Event listener for next quote button
+        nextQuoteBtn.addEventListener('click', displayRandomQuote);
+        
+        // Initialize with a random quote
+        displayRandomQuote();
+        
+        // Theme filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const quoteCards = document.querySelectorAll('.quote-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filter = button.textContent.toLowerCase();
+                
+                // Filter quotes
+                quoteCards.forEach(card => {
+                    if (filter === 'all' || card.classList.contains(filter)) {
+                        card.style.display = 'flex';
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Share functionality for quote cards
+        const shareIcons = document.querySelectorAll('.card-share');
+        shareIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                const card = e.currentTarget.closest('.quote-card');
+                const text = card.querySelector('.card-text').textContent;
+                const author = card.querySelector('.card-author').textContent;
+                
+                // In a real implementation, this would open share dialogs
+                alert(`Share this quote:\n\n"${text}"\n${author}`);
+            });
+        });
+        
+        // Social share for random quote
+        const socialIcons = document.querySelectorAll('.share-icons a');
+        socialIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.preventDefault();
+                const text = randomQuoteText.textContent;
+                const author = randomQuoteAuthor.textContent;
+                alert(`Share this quote:\n\n"${text}"\n${author}`);
+            });
+        });
+    </script>
+</body>
+</html>
