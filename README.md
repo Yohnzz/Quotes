@@ -1,69 +1,92 @@
-# 📜 Daily Inspiration Quotes App
+💬 Daily Quote Generator — School Task
 
-Aplikasi ini menampilkan kutipan inspiratif dari tokoh-tokoh terkenal untuk memotivasi, menginspirasi, dan memberikan energi positif setiap harinya.  
-Pengguna dapat melihat kutipan secara acak dan membagikannya ke media sosial.
+![HTML Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
----
+Deskripsi Singkat:
+Aplikasi Daily Quote Generator ini bakal nampilin kutipan inspiratif secara random setiap kali tombol ditekan.
+Cocok buat motivasi harian atau sekadar hiburan ringan.
+Desainnya modern, simple, dan responsive.
 
-## 🚀 Fitur
-- Menampilkan kutipan acak dari berbagai tokoh.
-- Tombol **Next Quote** untuk mengganti kutipan.
-- Tombol share ke **Twitter**, **Facebook**, dan **Email**.
-- Desain modern dengan sentuhan warna gradasi dan UI minimalis.
-- Responsif di desktop maupun mobile.
+📑 Table of Contents
+✨ Fitur
 
----
+📸 Preview
 
-## 🛠️ Teknologi yang Digunakan
-- **HTML5** – Struktur halaman.
-- **CSS3** – Styling dan layout responsif.
-- **JavaScript** – Mengambil dan menampilkan quotes secara dinamis.
-- **API Quotes** – Sumber kutipan inspiratif.
+🛠️ Teknologi
 
----
+🚀 Instalasi & Penggunaan
 
-## 📂 Struktur Folder
-project-folder/
-│
-├── index.html # Halaman utama aplikasi
-├── style.css # File CSS untuk styling
-├── script.js # Logika aplikasi (JavaScript)
-└── assets/ # Folder untuk gambar atau ikon tambahan
+📂 Struktur Folder
 
-yaml
-Copy
-Edit
+💡 Rencana Pengembangan
 
----
+🤝 Kontribusi
 
-## 📦 Cara Menjalankan
-1. Clone repository ini:
-   ```bash
-   git clone https://github.com/Yohnzz/Quotes.git
-Masuk ke folder project:
+📜 Lisensi
+
+✨ Fitur
+🖱 Tombol Next Quote untuk ganti kutipan secara random
+
+✍ Nama penulis kutipan muncul otomatis
+
+📱 Responsive design — nyaman di HP dan desktop
+
+🔗 Share button ke Twitter, Facebook, atau Email
+
+📸 Preview
+
+
+🛠️ Teknologi
+HTML5 → Struktur halaman
+
+CSS3 → Styling dan layout
+
+JavaScript (Vanilla) → Logika random quote dan interaksi
+
+🚀 Instalasi & Penggunaan
+Clone Repository
 
 bash
 Copy
 Edit
-cd daily-quotes
-Buka index.html di browser.
+git clone https://github.com/username/quote-generator.git
+Masuk ke folder project
 
-🌐 Demo Online
-Kamu bisa melihat versi live di:
-GitHub Pages Link
-
-📸 Preview
-./assets/gambar.jpg
-
-📄 Lisensi
-Proyek ini menggunakan lisensi MIT.
-Silakan gunakan, modifikasi, dan distribusikan sesuai kebutuhan.
-
-yaml
+bash
 Copy
 Edit
+cd quote-generator
+Buka file index.html di browser
 
----
+📂 Struktur Folder
+r
+Copy
+Edit
+quote-generator/
+│
+├── index.html        # Struktur utama website
+├── style.css         # Styling website
+├── script.js         # Logic dan fungsi random quote
+├── assets/
+│   └── preview.png   # Screenshot tampilan
+└── README.md         # Dokumentasi project
+💡 Rencana Pengembangan
+🌙 Dark Mode
 
-Kalau mau, aku bisa sekalian bikinin **README ini plus file `preview.png`-nya langsung di repo GitHub** biar tampil cakep kayak To-Do List kamu kemarin.  
-Mau sekalian aku bikinin juga?
+🔍 Search quote berdasarkan kata kunci
+
+💾 Simpan kutipan favorit di localStorage
+
+🤝 Kontribusi
+Fork repository ini
+
+Buat branch baru: feature-namaFitur
+
+Commit perubahan
+
+Push branch dan buat pull request
+
+📜 Lisensi
+Project ini menggunakan lisensi MIT — bebas digunakan dan dimodifikasi.
