@@ -1,13 +1,13 @@
-💬 Daily Quote Generator — School Task
+📚 Quotes Website — School Task
 
 ![HTML Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
+
 Deskripsi Singkat:
-Aplikasi Daily Quote Generator ini bakal nampilin kutipan inspiratif secara random setiap kali tombol ditekan.
-Cocok buat motivasi harian atau sekadar hiburan ringan.
-Desainnya modern, simple, dan responsive.
+Website ini menampilkan quotes inspiratif dari tokoh-tokoh terkenal yang bisa memotivasi, menginspirasi, dan bikin hari kamu lebih positif.
+Desainnya clean, modern, & responsive, cocok buat project sekolah atau portofolio.
 
 📑 Table of Contents
 ✨ Fitur
@@ -27,13 +27,15 @@ Desainnya modern, simple, dan responsive.
 📜 Lisensi
 
 ✨ Fitur
-🖱 Tombol Next Quote untuk ganti kutipan secara random
+📜 Menampilkan quotes secara dinamis
 
-✍ Nama penulis kutipan muncul otomatis
+🔄 Tombol Next Quote untuk menampilkan kutipan baru
 
-📱 Responsive design — nyaman di HP dan desktop
+👤 Menampilkan nama penulis quotes
 
-🔗 Share button ke Twitter, Facebook, atau Email
+📱 Responsive UI untuk HP & PC
+
+📢 Tombol share ke media sosial (Twitter, Facebook, Email)
 
 📸 Preview
 
@@ -41,9 +43,9 @@ Desainnya modern, simple, dan responsive.
 🛠️ Teknologi
 HTML5 → Struktur halaman
 
-CSS3 → Styling dan layout
+CSS3 → Styling & layout modern
 
-JavaScript (Vanilla) → Logika random quote dan interaksi
+JavaScript (Vanilla) → Mengambil dan menampilkan quotes secara dinamis
 
 🚀 Instalasi & Penggunaan
 Clone Repository
@@ -51,42 +53,59 @@ Clone Repository
 bash
 Copy
 Edit
-git clone https://github.com/username/quote-generator.git
-Masuk ke folder project
+git clone https://github.com/username/quotes-website.git
+Buka Folder Project
 
 bash
 Copy
 Edit
-cd quote-generator
-Buka file index.html di browser
+cd quotes-website
+Jalankan di Browser
+
+Klik dua kali file index.html atau gunakan ekstensi Live Server di VS Code
 
 📂 Struktur Folder
-r
+bash
 Copy
 Edit
-quote-generator/
+quotes-website/
 │
-├── index.html        # Struktur utama website
-├── style.css         # Styling website
-├── script.js         # Logic dan fungsi random quote
-├── assets/
-│   └── preview.png   # Screenshot tampilan
-└── README.md         # Dokumentasi project
+├── assets/           # Gambar, ikon, dll.
+├── style.css         # File CSS utama
+├── script.js         # Logika JavaScript
+└── index.html        # Halaman utama
 💡 Rencana Pengembangan
-🌙 Dark Mode
+🎯 Tambah fitur search quotes berdasarkan keyword
 
-🔍 Search quote berdasarkan kata kunci
+🌙 Tambah dark mode
 
-💾 Simpan kutipan favorit di localStorage
+🌐 Ambil quotes dari API publik
+
+📌 Favoritkan quotes pilihan
 
 🤝 Kontribusi
-Fork repository ini
+Fork project ini
 
-Buat branch baru: feature-namaFitur
+Buat branch baru (git checkout -b fitur-baru)
 
-Commit perubahan
+Commit perubahan (git commit -m 'Tambah fitur X')
 
-Push branch dan buat pull request
+Push ke branch (git push origin fitur-baru)
+
+Ajukan Pull Request
 
 📜 Lisensi
-Project ini menggunakan lisensi MIT — bebas digunakan dan dimodifikasi.
+Project ini menggunakan lisensi MIT — bebas digunakan & dimodifikasi untuk keperluan apapun.
+
+Kalau mau, aku bisa sekalian bikinin versi README ini yang sudah ada badge preview warnanya ungu biar match sama tema websitemu.
+Mau aku langsung bikinin?
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
